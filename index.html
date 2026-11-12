@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integra Brasil - Guia de Regularização</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --bg: #f4f6f9;
+            --text: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .lang-buttons {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .lang-buttons button {
+            cursor: pointer;
+            padding: 8px 15px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            background: #e9ecef;
+            color: #495057;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+        }
+        .lang-buttons button:hover {
+            background: #d6d8db;
+        }
+        .lang-buttons button.active {
+            background: var(--primary);
+            color: white;
+            border-color: #004494;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #eaeaea;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .card p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #004494;
+        }
+        footer {
+            margin-top: 25px;
+            font-size: 0.8em;
+            color: #888;
+            border-top: 1px solid #eaeaea;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Seleção de Idiomas -->
+        <div class="lang-buttons">
+            <button onclick="setLang('pt')" class="active" id="btn-pt">PT</button>
+            <button onclick="setLang('es')" id="btn-es">ES</button>
+            <button onclick="setLang('fr')" id="btn-fr">FR</button>
+            <button onclick="setLang('en')" id="btn-en">EN</button>
+        </div>
+
+        <h1 id="title">Integra Brasil</h1>
+        <p id="subtitle" class="subtitle">Seu guia rápido para documentação no Brasil.</p>
+
+        <!-- Seção CPF -->
+        <div class="card">
+            <h3 id="cpf-title">1. CPF (Pessoas Físicas)</h3>
+            <p id="cpf-desc">Documento essencial para trabalhar, abrir conta em banco e acessar saúde pública.</p>
+            <a href="https://servicos.receita.fazenda.gov.br/Servicos/CPF/InscricaoCpfEstrangeiro/default.asp" target="_blank" class="btn" id="cpf-btn">Solicitar CPF</a>
+        </div>
+
+        <!-- Seção CTPS -->
+        <div class="card">
+            <h3 id="ctps-title">2. Carteira de Trabalho Digital</h3>
+            <p id="ctps-desc">Necessária para o registro de trabalho formal e garantia de direitos no Brasil.</p>
+            <a href="https://www.gov.br/pt-br/servicos/obter-a-carteira-de-trabalho" target="_blank" class="btn" id="ctps-btn">Baixar Aplicativo</a>
+        </div>
+
+        <!-- Seção Currículo -->
+        <div class="card">
+            <h3 id="cv-title">3. Modelo de Currículo</h3>
+            <p id="cv-desc">Baixe um modelo simples, em português, pronto para preencher e entregar nas empresas.</p>
+            <a href="https://www.canva.com/pt_br/curriculos/modelos/simples/" target="_blank" class="btn" id="cv-btn">Ver Modelos</a>
+        </div>
+
+        <footer>
+            <p id="footer-text">Desenvolvido por Adler Aued - Ciência da Computação</p>
+        </footer>
+    </div>
+
+    <!-- Script de Tradução -->
+    <script>
+        const translations = {
+            pt: {
+                title: "Integra Brasil",
+                subtitle: "Seu guia rápido para documentação no Brasil.",
+                cpfTitle: "1. CPF (Pessoas Físicas)",
+                cpfDesc: "Documento essencial para trabalhar, abrir conta em banco e acessar saúde pública.",
+                cpfBtn: "Solicitar CPF",
+                ctpsTitle: "2. Carteira de Trabalho Digital",
+                ctpsDesc: "Necessária para o registro de trabalho formal e garantia de direitos no Brasil.",
+                ctpsBtn: "Baixar Aplicativo",
+                cvTitle: "3. Modelo de Currículo",
+                cvDesc: "Baixe um modelo simples, em português, pronto para preencher e entregar nas empresas.",
+                cvBtn: "Ver Modelos",
+                footer: "Desenvolvido por Adler Aued - Ciência da Computação"
+            },
+            es: {
+                title: "Integra Brasil",
+                subtitle: "Tu guía rápida para documentación en Brasil.",
+                cpfTitle: "1. CPF (Registro Fiscal)",
+                cpfDesc: "Documento esencial para trabajar, abrir cuenta bancaria y acceder a salud pública.",
+                cpfBtn: "Solicitar CPF",
+                ctpsTitle: "2. Cartera de Trabajo Digital",
+                ctpsDesc: "Necesaria para el registro laboral formal y garantía de derechos en Brasil.",
+                ctpsBtn: "Descargar Aplicación",
+                cvTitle: "3. Plantilla de Currículum",
+                cvDesc: "Descarga una plantilla sencilla, en portugués, lista para rellenar y entregar a empresas.",
+                cvBtn: "Ver Plantillas",
+                footer: "Desarrollado por Adler Aued - Ciencias de la Computación"
+            },
+            fr: {
+                title: "Integra Brasil",
+                subtitle: "Votre guide rapide pour la documentation au Brésil.",
+                cpfTitle: "1. CPF (Numéro Fiscal)",
+                cpfDesc: "Document essentiel pour travailler, ouvrir un compte bancaire et accéder à la santé publique.",
+                cpfBtn: "Demander le CPF",
+                ctpsTitle: "2. Carnet de Travail Numérique",
+                ctpsDesc: "Nécessaire pour l'enregistrement du travail formel et la garantie des droits au Brésil.",
+                ctpsBtn: "Télécharger l'Application",
+                cvTitle: "3. Modèle de CV",
+                cvDesc: "Téléchargez un modèle simple, en portugais, prêt à remplir et à remettre aux entreprises.",
+                cvBtn: "Voir les Modèles",
+                footer: "Développé par Adler Aued - Informatique"
+            },
+            en: {
+                title: "Integra Brasil",
+                subtitle: "Your quick guide for documentation in Brazil.",
+                cpfTitle: "1. CPF (Tax ID)",
+                cpfDesc: "Essential document to work, open a bank account, and access public health.",
+                cpfBtn: "Apply for CPF",
+                ctpsTitle: "2. Digital Work Card",
+                ctpsDesc: "Required for formal employment registration and guarantee of rights in Brazil.",
+                ctpsBtn: "Download App",
+                cvTitle: "3. Resume Template",
+                cvDesc: "Download a simple template, in Portuguese, ready to fill out and hand to companies.",
+                cvBtn: "See Templates",
+                footer: "Developed by Adler Aued - Computer Science"
+            }
+        };
+
+        function setLang(lang) {
+            document.querySelectorAll('.lang-buttons button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            document.getElementById('title').innerText = translations[lang].title;
+            document.getElementById('subtitle').innerText = translations[lang].subtitle;
+            
+            document.getElementById('cpf-title').innerText = translations[lang].cpfTitle;
+            document.getElementById('cpf-desc').innerText = translations[lang].cpfDesc;
+            document.getElementById('cpf-btn').innerText = translations[lang].cpfBtn;
+            
+            document.getElementById('ctps-title').innerText = translations[lang].ctpsTitle;
+            document.getElementById('ctps-desc').innerText = translations[lang].ctpsDesc;
+            document.getElementById('ctps-btn').innerText = translations[lang].ctpsBtn;
+            
+            document.getElementById('cv-title').innerText = translations[lang].cvTitle;
+            document.getElementById('cv-desc').innerText = translations[lang].cvDesc;
+            document.getElementById('cv-btn').innerText = translations[lang].cvBtn;
+            
+            document.getElementById('footer-text').innerText = translations[lang].footer;
+        }
+    </script>
+</body>
+</html>
